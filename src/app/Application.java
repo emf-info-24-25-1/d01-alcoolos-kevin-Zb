@@ -1,17 +1,26 @@
 package app;
 
-public class Application {
-    
-        //
-        //              )        (                 ) (           (         (
-        //           ( /(   *   ))\ )        (  ( /( )\ )        )\ )  (   )\ )
-        //     (   ( )\())` )  /(()/((       )\ )\()|()/(  (    (()/(  )\ (()/(
-        //     )\  )((_)\  ( )(_))(_))\    (((_|(_)\ /(_)) )\    /(_)|((_) /(_))
-        //    ((_)((_)((_)(_(_()|_))((_)   )\___ ((_|_))_ ((_)  (_)) )\___(_))
-        //    __   _____ _____ ___ ___    ___ ___  ___  ___   ___ ___ ___   _
-        //    \ \ / / _ \_   _| _ \ __|  / __/ _ \|   \| __| |_ _/ __|_ _| | |
-        //     \ V / (_) || | |   / _|  | (_| (_) | |) | _|   | | (__ | |  |_|
-        //      \_/ \___/ |_| |_|_\___|  \___\___/|___/|___| |___\___|___| (_)
-        //
+import model.ami;
 
+public class Application {
+        public static void main(String[] args) {
+                ami joachim = new ami("joachim", 10);
+                ami eduardo = new ami("eduardo", 8);
+                ami kevin = new ami("kevin", 9);
+                do {
+                        joachim.getBiere();
+                        joachim.boitUneBiere();
+                        eduardo.getBiere();
+                        eduardo.boitUneBiere();
+                        kevin.getBiere();
+                        kevin.boitUneBiere();
+                } while (!kevin.getEstBouree() && !eduardo.getEstBouree() && !joachim.getEstBouree());
+                if (kevin.getEstBouree()) {
+                        System.out.println("kevin est bouré");
+                } else if (eduardo.getEstBouree()) {
+                        System.out.println("eduardo est bourée");
+                } else {
+                        System.out.println("joachim est bourée");
+                }
+        }
 }
