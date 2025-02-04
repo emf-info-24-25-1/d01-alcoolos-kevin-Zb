@@ -1,17 +1,28 @@
 package app;
 
-public class Application {
-    
-        //
-        //              )        (                 ) (           (         (
-        //           ( /(   *   ))\ )        (  ( /( )\ )        )\ )  (   )\ )
-        //     (   ( )\())` )  /(()/((       )\ )\()|()/(  (    (()/(  )\ (()/(
-        //     )\  )((_)\  ( )(_))(_))\    (((_|(_)\ /(_)) )\    /(_)|((_) /(_))
-        //    ((_)((_)((_)(_(_()|_))((_)   )\___ ((_|_))_ ((_)  (_)) )\___(_))
-        //    __   _____ _____ ___ ___    ___ ___  ___  ___   ___ ___ ___   _
-        //    \ \ / / _ \_   _| _ \ __|  / __/ _ \|   \| __| |_ _/ __|_ _| | |
-        //     \ V / (_) || | |   / _|  | (_| (_) | |) | _|   | | (__ | |  |_|
-        //      \_/ \___/ |_| |_|_\___|  \___\___/|___/|___| |___\___|___| (_)
-        //
+import model.Ami;
 
+public class Application {
+        public static void main(String[] args) {
+                Ami joachim = new Ami("joachim", 10);
+                Ami eduardo = new Ami("eduardo", 8);
+                Ami kevin = new Ami("kevin", 9);
+                do {
+                        joachim.getBiereRestantes();
+                        joachim.boitUneBiere();
+
+                        System.out.println("-----------------------------------");
+
+                        eduardo.getBiereRestantes();
+                        eduardo.boitUneBiere();
+
+                        System.out.println("-----------------------------------");
+
+                        kevin.getBiereRestantes();
+                        kevin.boitUneBiere();
+
+                        System.out.println("-----------------------------------");
+
+                } while (!kevin.getEstBouree() && !eduardo.getEstBouree() && !joachim.getEstBouree());
+        }
 }
