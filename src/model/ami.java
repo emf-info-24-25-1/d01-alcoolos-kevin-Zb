@@ -1,11 +1,11 @@
 package model;
 
-public class ami {
+public class Ami {
     private String nom;
     private int biereMax;
     private boolean estBouree = false;
 
-    public ami(String nom, int biereMax) {
+    public Ami(String nom, int biereMax) {
         this.nom = nom;
         this.biereMax = biereMax;
         System.out.println("l'ami " + nom + " à été créé.");
@@ -16,10 +16,12 @@ public class ami {
     }
 
     public void boitUneBiere(){
-        System.out.println(this.nom + " boit une bière");
-        this.biereMax = this.biereMax - 1;
-        if (this.biereMax == 0) {
-            this.estBouree = true;
+        if (biereMax > 0) {
+            biereMax--;
+            System.out.println("le frero " + nom +" a bu une bière");
+        } else {
+            System.out.println("le frero " + nom + " est bourrée");
+            estBouree = true;
         }
     }
 
@@ -27,7 +29,7 @@ public class ami {
         return this.estBouree;
     }
 
-    public void getBiere() {
-        System.out.println(this.nom + " peut encore boire " + this.biereMax + " bière.");
+    public void getBiereRestantes() {
+        System.out.println(this.nom + " peut encore boire " + this.biereMax + " bière.");   
     }
 }

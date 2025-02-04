@@ -1,26 +1,28 @@
 package app;
 
-import model.ami;
+import model.Ami;
 
 public class Application {
         public static void main(String[] args) {
-                ami joachim = new ami("joachim", 10);
-                ami eduardo = new ami("eduardo", 8);
-                ami kevin = new ami("kevin", 9);
+                Ami joachim = new Ami("joachim", 10);
+                Ami eduardo = new Ami("eduardo", 8);
+                Ami kevin = new Ami("kevin", 9);
                 do {
-                        joachim.getBiere();
+                        joachim.getBiereRestantes();
                         joachim.boitUneBiere();
-                        eduardo.getBiere();
+
+                        System.out.println("-----------------------------------");
+
+                        eduardo.getBiereRestantes();
                         eduardo.boitUneBiere();
-                        kevin.getBiere();
+
+                        System.out.println("-----------------------------------");
+
+                        kevin.getBiereRestantes();
                         kevin.boitUneBiere();
+
+                        System.out.println("-----------------------------------");
+
                 } while (!kevin.getEstBouree() && !eduardo.getEstBouree() && !joachim.getEstBouree());
-                if (kevin.getEstBouree()) {
-                        System.out.println("kevin est bouré");
-                } else if (eduardo.getEstBouree()) {
-                        System.out.println("eduardo est bourée");
-                } else {
-                        System.out.println("joachim est bourée");
-                }
         }
 }
